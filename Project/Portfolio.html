@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Trick</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">PORTFOLIO TRICK</h1>
+            <button id="buildBtn" class="build-btn">
+                <i class="fas fa-hammer"></i> Build Your Portfolio
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Welcome Page -->
+        <section id="welcomePage" class="page active">
+            <div class="welcome-container">
+                <h1>Create Your Portfolio in Minutes</h1>
+                <p>Build a portfolio website that showcases your skills, experience, and projects to attract employers.</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-palette"></i>
+                        <h3>Templates</h3>
+                        <p>Choose the designed templates for your portfolio</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-magic"></i>
+                        <h3>Easy Customization</h3>
+                        <p>Fill your details and watch it come to fill</p>
+                    </div>
+                </div>
+                <button id="startBuilding" class="cta-btn">
+                    Build Now <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Template Selection Page -->
+        <section id="templatePage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-th-large"></i> Templates</h2>
+                <p>Select the templates for your portfolio Building </p>
+            </div>
+            <div class="templates-container" id="templatesContainer">
+                <!-- Templates will be loaded here dynamically -->
+            </div>
+            <div class="navigation-btns">
+                <button id="backToWelcome" class="nav-btn">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+            </div>
+        </section>
+
+        <!-- Personal Information Page -->
+        <section id="personalInfoPage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+                <p>Fill your basic details</p>
+            </div>
+            
+            <div class="form-container">
+                <!-- Font Selection -->
+                <div class="form-section">
+                    <h3><i class="fas fa-font"></i> Choose Font Style</h3>
+                    <div class="font-options" id="fontOptions">
+                        <!-- Font options will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Photo Upload -->
+                <div class="form-section">
+                    <h3><i class="fas fa-camera"></i> Profile Photo</h3>
+                    <div class="photo-upload">
+                        <div class="upload-area" id="uploadArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Click to upload your photo</p>
+                            <input type="file" id="photoInput" accept="image/*" hidden>
+                        </div>
+                        <div class="photo-preview" id="photoPreview"></div>
+                    </div>
+                </div>
+
+                <!-- Personal Details Form -->
+                <div class="form-section">
+                    <h3><i class="fas fa-info-circle"></i> Personal Details</h3>
+                    <form id="personalInfoForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fullName"><i class="fas fa-user"></i> Full Name</label>
+                                <input type="text" id="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="profession"><i class="fas fa-briefcase"></i> Professional Title</label>
+                                <input type="text" id="profession" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Gmail ID</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location"><i class="fas fa-map-marker-alt"></i> Location</label>
+                                <input type="text" id="location" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="github"><i class="fab fa-github"></i> GitHub Profile Link</label>
+                                <input type="url" id="github">
+                            </div>
+                            <div class="form-group">
+                                <label for="linkedin"><i class="fab fa-linkedin"></i> LinkedIn Profile Link</label>
+                                <input type="url" id="linkedin">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="navigation-btns">
+                    <button id="backToTemplates" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button id="nextToObjective" class="nav-btn next-btn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Objective Page -->
+       
+  <section id="careerObjectivePage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-bullseye"></i> Career Objective</h2>
+                <p>Tell about yourself and your career goals</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="aboutMe"><i class="fas fa-user-edit"></i> About Me</label>
+                        <textarea id="aboutMe" rows="4" placeholder="Write about yourself..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="careerObjective"><i class="fas fa-target"></i> Career Objective</label>
+                        <textarea id="careerObjective" rows="4" placeholder="Write your career objectives..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="navigation-btns">
+                    <button id="backToPersonalInfo" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button id="nextToSkills" class="nav-btn next-btn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+              
+         <!-- Skills Page -->
+        <section id="skillsPage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-tools"></i> Skills</h2>
+                <p>Add your technical and professional skills</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-section">
+                    <div class="form-group">
+                        <div class="input-with-btn">
+                            <input type="text" id="newSkill" placeholder="Enter a skills">
+                            <button id="addSkill" class="add-btn">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-list" id="skillsList">
+                        <!-- Skills will be added here -->
+                        <div class="empty-state">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                </div>
+                
+           
+                
+                <div class="navigation-btns">
+                    <button id="backToObjective" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button id="nextToProjects" class="nav-btn next-btn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Page -->
+        <section id="projectsPage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+                <p>Showcase your work and achievements</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-section">
+                    <button id="addProjectBtn" class="add-section-btn">
+                        <i class="fas fa-plus-circle"></i> Add Project
+                    </button>
+                    
+                    <div class="projects-container" id="projectsContainer">
+                        <!-- Projects will be added here -->
+                    </div>
+                </div>
+                
+                <div class="navigation-btns">
+                    <button id="backToSkills" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button id="nextToExperience" class="nav-btn next-btn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Page -->
+        <section id="experiencePage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-briefcase"></i>Work Experience</h2>
+            
+            </div>
+            
+            <div class="form-container">
+                <div class="form-section">
+                    <button id="addExperienceBtn" class="add-section-btn">
+                        <i class="fas fa-plus-circle"></i> Add Experience
+                    </button>
+                    
+                    <div class="experiences-container" id="experiencesContainer">
+                        <!-- Experiences will be added here -->
+                    </div>
+                </div>
+                
+                <div class="navigation-btns">
+                    <button id="backToProjects" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button id="nextToEducation" class="nav-btn next-btn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Page -->
+        <section id="educationPage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <p>Add your educational qualifications</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-section">
+                    <button id="addEducationBtn" class="add-section-btn">
+                        <i class="fas fa-plus-circle"></i> Add Education
+                    </button>
+                    
+                    <div class="educations-container" id="educationsContainer">
+                        <!-- Education entries will be added here -->
+                    </div>
+                </div>
+                
+                <div class="navigation-btns">
+                    <button id="backToExperience" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button id="nextToLanguages" class="nav-btn next-btn">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages & Others Page -->
+        <section id="languagesPage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-language"></i> Internships & Additional Information</h2>
+                <p>For Certifications and Language Details</p>
+            </div>
+            
+            <div class="form-container">
+                 <!-- Internships -->
+                <div class="form-section">
+                    <h3><i class="fas fa-building"></i> Internships</h3>
+                    <button id="addInternshipBtn" class="add-section-btn">
+                        <i class="fas fa-plus-circle"></i> Add Internship
+                    </button>
+                    
+                    <div class="internships-container" id="internshipsContainer">
+                        <!-- Internships will be added here -->
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="form-section">
+                    <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                    <div class="form-group">
+                        <div class="input-with-btn">
+                            <input type="text" id="newCertification">
+                            <button id="addCertification" class="add-btn">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                    <div class="certifications-list" id="certificationsList">
+                        <!-- Certifications will be added here -->
+                    </div>
+                </div>
+
+
+                   <!-- Languages -->
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-language"></i> Languages Now</h3>
+                    <div class="form-group">
+                        <div class="input-with-btn">
+                            <input type="text" id="newLanguage">
+                            <button id="addLanguage" class="add-btn">
+                                <i class="fas fa-plus"></i> Add Language
+                            </button>
+                        </div>
+                    </div>
+                    <div class="languages-list" id="languagesList">
+                        <!-- Languages will be added here -->
+                    </div>
+                </div>
+
+                
+                <div class="navigation-btns">
+                    <button id="backToEducation" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </button>
+                    <button id="generatePortfolio" class="nav-btn next-btn generate-btn">
+                        <i class="fas fa-magic"></i> Generate Portfolio
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Preview Page -->
+        <section id="portfolioPreviewPage" class="page">
+            <div class="page-header">
+                <h2><i class="fas fa-eye"></i> Portfolio</h2>
+                <p>Preview and finalize your portfolio</p>
+            </div>
+            
+            <div class="preview-container">
+                <div class="preview-nav">
+                    <button class="preview-nav-btn active" data-section="personal">
+                        <i class="fas fa-user"></i> Personal
+                    </button>
+                    <button class="preview-nav-btn" data-section="skills">
+                        <i class="fas fa-tools"></i> Skills
+                    </button>
+                    <button class="preview-nav-btn" data-section="projects">
+                        <i class="fas fa-project-diagram"></i> Projects
+                    </button>
+                    <button class="preview-nav-btn" data-section="experience">
+                        <i class="fas fa-briefcase"></i> Experience
+                    </button>
+                    <button class="preview-nav-btn" data-section="education">
+                        <i class="fas fa-graduation-cap"></i> Education
+                    </button>
+                </div>
+                
+                <div class="portfolio-preview" id="portfolioPreview">
+                    <!-- Portfolio will be generated here -->
+                </div>
+                
+                <div class="portfolio-actions">
+                    <button id="downloadHTML" class="action-btn">
+                        <i class="fas fa-download"></i> Download HTML
+                    </button>
+                    <button id="copyCode" class="action-btn">
+                        <i class="fas fa-copy"></i> Copy Code
+                    </button>
+                    <button id="viewFullscreen" class="action-btn">
+                        <i class="fas fa-expand"></i> View Full Screen
+                    </button>
+                    <button id="deployPortfolio" class="action-btn deploy-btn">
+                        <i class="fas fa-rocket"></i> Deploy Portfolio
+                    </button>
+                </div>
+                
+                <div class="navigation-btns">
+                    <button id="backToLanguages" class="nav-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Edit
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deployment Success Page -->
+        <section id="deploySuccessPage" class="page">
+            <div class="success-container">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Portfolio Published Successfully! </h2>
+                
+                <div class="deployment-details">
+                    <div class="url-box">
+                        <h3>Your Portfolio URL:</h3>
+                        <div class="url-display">
+                            <input type="text" id="portfolioURL" readonly value="https://Portfolio-Trick.Com/Your-Portfolio">
+                            <button id="copyURL" class="copy-btn">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <a href="#" id="visitPortfolio" class="visit-btn" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Visit Portfolio
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="success-actions">
+                    <button id="createNew" class="action-btn">
+                        <i class="fas fa-plus"></i> Create Another Portfolio
+                    </button>
+
+                    <button id="viewPortfolio" class="action-btn">
+                        <i class="fas fa-eye"></i> View Portfolio
+                    </button>
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <form id="projectForm">
+                <div class="form-group">
+                    <label for="projectTitle">Project Title</label>
+                    <input type="text" id="projectTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="projectLink">Project URL</label>
+                    <input type="url" id="projectLink">
+                </div>
+                
+                <button type="submit" class="submit-btn">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Experience Modal -->
+    <div id="experienceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <form id="experienceForm">
+
+                 <div class="form-group">
+                    <label for="jobYears">Worked Years (2025-2026)</label>
+                    <input type="text" id="jobYears" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="jobrole">Job Role</label>
+                    <input type="text" id="jobrole" required>
+                </div>
+               <div class="form-group">
+                    <label for="jobDescription">Description</label>
+                    <textarea id="jobDescription" rows="3" required></textarea>
+                </div>
+
+
+                <button type="submit" class="submit-btn">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Education Modal -->
+    <div id="educationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <form id="educationForm">
+                <div class="form-group">
+                    <label for="degree">Degree</label>
+                    <input type="text" id="degree" required>
+                </div>
+                 <div class="form-group">
+                    <label for="educationYear">Year (2025-2026)</label>
+                    <input type="text" id="educationYear" required>
+                </div>
+                <div class="form-group">
+                    <label for="institute">School / College</label>
+                    <input type="text" id="institute" required>
+                </div>
+               
+                <button type="submit" class="submit-btn">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Internship Modal -->
+    <div id="internshipModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <form id="internshipForm">
+                <div class="form-group">
+                    <label for="internCompany">Company Name</label>
+                    <input type="text" id="internCompany" required>
+                </div>
+                <div class="form-group">
+                    <label for="internRole">Course \ Role</label>
+                    <input type="text" id="internRole" required>
+                </div>
+                <div class="form-group">
+                    <label for="internDuration">Duration</label>
+                    <input type="text" id="internDuration" placeholder="months or years">
+                </div>
+                  <div class="form-group">
+                    <label for="internDescription">Description</label>
+                    <textarea id="internDescription" rows="3"></textarea>
+                </div>
+              
+                <button type="submit" class="submit-btn">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="templates.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
